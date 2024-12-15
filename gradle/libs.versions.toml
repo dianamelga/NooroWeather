@@ -5,6 +5,7 @@ kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
+espressoCore = "3.6.1"
 kotlinxCoroutinesTest = "1.8.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
@@ -53,6 +54,7 @@ androidx-room-coroutines = { group = "androidx.room", name = "room-ktx", version
 androidx-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigation"}
 hilt-android-testing =  { module = "com.google.dagger:hilt-android-testing" , version.ref = "hilt" }
 androidx-ui-test-junit4-android = { group = "androidx.compose.ui", name = "ui-test-junit4-android", version.ref = "uiTestJunit4Android" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

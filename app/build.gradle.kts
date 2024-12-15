@@ -57,6 +57,12 @@ hilt {
     enableAggregatingTask = false
 }
 
+configurations.all {
+    resolutionStrategy {
+        force("androidx.test.ext:junit:1.1.5")  // Force the version to 1.1.5
+    }
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
