@@ -29,7 +29,7 @@ import coil.compose.AsyncImage
 import com.dianascode.nooroweather.R
 import com.dianascode.nooroweather.domain.model.Weather
 import com.dianascode.nooroweather.ui.common.utils.AsyncImagePlaceHolder
-import com.dianascode.nooroweather.ui.common.utils.toFarenheitFormat
+import com.dianascode.nooroweather.ui.common.utils.toWeatherFormat
 import com.dianascode.nooroweather.ui.theme.Gray
 import com.dianascode.nooroweather.ui.theme.GrayLabel
 import com.dianascode.nooroweather.ui.theme.GrayTertiary
@@ -73,7 +73,7 @@ fun SavedLocationsWeather(
                 )
             }
             Text(
-                text = weather?.temperature?.toFarenheitFormat() ?: "",
+                text = weather?.temperature?.toWeatherFormat() ?: "",
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.displayLarge
             )
@@ -97,7 +97,7 @@ fun SavedLocationsWeather(
                 Spacer(modifier = Modifier.width(8.dp))
                 Metric(
                     label = stringResource(R.string.feels_like),
-                    value = weather?.feelsLikeTemperature?.toFarenheitFormat() ?: ""
+                    value = weather?.feelsLikeTemperature?.toWeatherFormat() ?: ""
                 )
             }
         }

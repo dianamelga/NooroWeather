@@ -25,7 +25,7 @@ import coil.compose.AsyncImage
 import com.dianascode.nooroweather.domain.model.Weather
 import com.dianascode.nooroweather.ui.common.utils.AsyncImagePlaceHolder
 import com.dianascode.nooroweather.ui.common.utils.shimmerBackground
-import com.dianascode.nooroweather.ui.common.utils.toFarenheitFormat
+import com.dianascode.nooroweather.ui.common.utils.toWeatherFormat
 import com.dianascode.nooroweather.ui.theme.NooroWeatherTheme
 
 @Composable
@@ -75,7 +75,7 @@ private fun CardContent(
                 style = MaterialTheme.typography.titleMedium
             )
             Text(
-                text = weather.temperature.toFarenheitFormat(),
+                text = weather.temperature.toWeatherFormat(),
                 style = MaterialTheme.typography.headlineLarge
             )
         }

@@ -15,11 +15,11 @@ fun WeatherEntity.toWeather() = Weather(
 
 fun WeatherResponse.toWeather() = Weather(
     cityName = this.location.name,
-    temperature = this.current.tempF,
+    temperature = this.current.tempC,
     weatherCondition = this.current.condition.icon,
     humidity = this.current.humidity,
     uvIndex = this.current.uv,
-    feelsLikeTemperature = this.current.feelslikeF
+    feelsLikeTemperature = this.current.feelslikeC
 )
 
 fun Weather.toEntity() = WeatherEntity(

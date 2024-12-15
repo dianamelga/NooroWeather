@@ -4,9 +4,9 @@ import com.dianascode.nooroweather.data.local.WeatherEntity
 
 fun WeatherResponse.toEntity() = WeatherEntity(
     cityName = this.location.name,
-    temperature = this.current.tempF,
+    temperature = this.current.tempC,
     weatherCondition = this.current.condition.icon,
     humidity = this.current.humidity,
     uvIndex = this.current.uv,
-    feelsLikeTemperature = this.current.feelslikeF
+    feelsLikeTemperature = this.current.feelslikeC
 )
