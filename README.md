@@ -5,7 +5,7 @@ A weather application built with modern Android development practices, using MVV
 - Clone the repository
 - Perform Gradle Sync
 - Run the project directly on Android Studio or run this command within the root folder `./gradlew installDebug` to install it on your device
-- Run the tests using this command `./gradlew test`
+- Run the Unit tests and UI tests using this command `./gradlew test connectedAndroidTest`
 
 ## Architecture
 This app uses MVVM (Model-View-ViewModel) combined with Clean Architecture, divided into four main layers:
