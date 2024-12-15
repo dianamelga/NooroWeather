@@ -22,7 +22,7 @@ import com.dianascode.nooroweather.ui.theme.NooroWeatherTheme
 
 @Composable
 fun HomeScreen(
-    navController: NavController, // for this scope is not needed, but this can be used to navigate to another screen
+    navController: NavController? = null, // for this scope is not needed, but this can be used to navigate to another screen
     viewModel: HomeViewModel = hiltViewModel(),
     modifier: Modifier = Modifier
 ) {

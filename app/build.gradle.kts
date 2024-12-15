@@ -70,9 +70,12 @@ dependencies {
 
     // dependency injection with hilt
     implementation(libs.google.dagger.hilt.android)
+    implementation(libs.androidx.ui.test.junit4.android)
     ksp(libs.google.dagger.hilt.compiler)
     implementation(libs.androidx.hilt.navigation)
     implementation(libs.hilt.android.gradle.plugin)
+    testImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.hilt.android.testing)
 
     // networking with retrofit
     implementation(libs.retrofit)
@@ -94,10 +97,13 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.kotlin)
-    
+
+    // ui tests
+    androidTestImplementation(libs.dexmaker.mockito.inline)
+    androidTestImplementation(libs.mockito.kotlin)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)

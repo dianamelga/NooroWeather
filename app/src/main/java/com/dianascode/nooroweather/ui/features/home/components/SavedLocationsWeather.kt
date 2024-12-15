@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -29,6 +30,7 @@ import coil.compose.AsyncImage
 import com.dianascode.nooroweather.R
 import com.dianascode.nooroweather.domain.model.Weather
 import com.dianascode.nooroweather.ui.common.utils.AsyncImagePlaceHolder
+import com.dianascode.nooroweather.ui.common.utils.TestIdentifiers
 import com.dianascode.nooroweather.ui.common.utils.toWeatherFormat
 import com.dianascode.nooroweather.ui.theme.Gray
 import com.dianascode.nooroweather.ui.theme.GrayLabel
@@ -42,7 +44,7 @@ fun SavedLocationsWeather(
 ) {
     val weather = savedLocations.lastOrNull()
     Column(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth().testTag(TestIdentifiers.savedLocations),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.weight(0.1f))

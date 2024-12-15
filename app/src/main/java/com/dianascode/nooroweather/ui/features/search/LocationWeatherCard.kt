@@ -19,11 +19,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.dianascode.nooroweather.domain.model.Weather
 import com.dianascode.nooroweather.ui.common.utils.AsyncImagePlaceHolder
+import com.dianascode.nooroweather.ui.common.utils.TestIdentifiers
 import com.dianascode.nooroweather.ui.common.utils.shimmerBackground
 import com.dianascode.nooroweather.ui.common.utils.toWeatherFormat
 import com.dianascode.nooroweather.ui.theme.NooroWeatherTheme
@@ -63,6 +65,7 @@ private fun CardContent(
             .padding(vertical = 16.dp, horizontal = 20.dp)
             .fillMaxWidth()
             .clickable { onClick(weather) }
+            .testTag(TestIdentifiers.weatherCard)
         ,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -97,7 +100,8 @@ private fun CardPlaceHolder(
     Row(
         modifier = Modifier
             .padding(vertical = 16.dp, horizontal = 20.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .testTag(TestIdentifiers.loadingState),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Column(
