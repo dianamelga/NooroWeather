@@ -47,7 +47,6 @@ class WeatherRepository @Inject constructor(
     private fun handleError(exception: Exception): Exception {
         return when (exception) {
             is java.net.UnknownHostException -> NetworkErrorException("Network error")
-//            is retrofit2.HttpException -> ApiException("API error") TODO
             else -> exception
         }
     }
