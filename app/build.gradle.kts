@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.ksp)
-    alias(libs.plugins.android.hilt)
 }
 
 android {
@@ -53,16 +52,6 @@ android {
     }
 }
 
-hilt {
-    enableAggregatingTask = false
-}
-
-configurations.all {
-    resolutionStrategy {
-        force("androidx.test.ext:junit:1.1.5")  // Force the version to 1.1.5
-    }
-}
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -74,14 +63,16 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    // dependency injection with hilt
-    implementation(libs.google.dagger.hilt.android)
-    implementation(libs.androidx.ui.test.junit4.android)
-    ksp(libs.google.dagger.hilt.compiler)
-    implementation(libs.androidx.hilt.navigation)
-    implementation(libs.hilt.android.gradle.plugin)
-    testImplementation(libs.hilt.android.testing)
-    androidTestImplementation(libs.hilt.android.testing)
+    // dependency injection with koin
+    implementation(project.dependencies.platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.test)
+    implementation(libs.koin.test.junit4)
+    implementation(libs.koin.android)
+    implementation(libs.koin.android.test)
+    implementation(libs.koin.android.compose)
+    implementation(libs.koin.android.compose.navigation)
+    implementation(libs.koin.core.coroutines)
 
     // networking with retrofit
     implementation(libs.retrofit)

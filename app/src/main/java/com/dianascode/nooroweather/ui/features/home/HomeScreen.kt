@@ -11,7 +11,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.dianascode.nooroweather.domain.model.Weather
 import com.dianascode.nooroweather.ui.features.home.components.NoSavedLocationsWeather
@@ -19,11 +18,12 @@ import com.dianascode.nooroweather.ui.features.home.components.SavedLocationsWea
 import com.dianascode.nooroweather.ui.features.search.LocationSearchBar
 import com.dianascode.nooroweather.ui.features.search.LocationWeatherCard
 import com.dianascode.nooroweather.ui.theme.NooroWeatherTheme
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun HomeScreen(
     navController: NavController? = null, // for this scope is not needed, but this can be used to navigate to another screen
-    viewModel: HomeViewModel = hiltViewModel(),
+    viewModel: HomeViewModel = koinViewModel(),
     modifier: Modifier = Modifier
 ) {
     val savedLocationsWeather by viewModel.savedLocationsWeather.collectAsState()

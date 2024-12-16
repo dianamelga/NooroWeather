@@ -5,18 +5,14 @@ import com.dianascode.nooroweather.data.local.WeatherDao
 import com.dianascode.nooroweather.data.local.WeatherEntity
 import com.dianascode.nooroweather.data.model.WeatherResponse
 import com.dianascode.nooroweather.data.remote.WeatherApiService
-import com.dianascode.nooroweather.shared.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-class WeatherRepository @Inject constructor(
+class WeatherRepository(
     private val weatherApiService: WeatherApiService,
     private val weatherDao: WeatherDao,
-    @IODispatcher private val ioDispatcher: CoroutineDispatcher
+    private val ioDispatcher: CoroutineDispatcher
     ): IWeatherRepository {
 
     override suspend fun searchWeather(cityName: String): Result<WeatherResponse> {

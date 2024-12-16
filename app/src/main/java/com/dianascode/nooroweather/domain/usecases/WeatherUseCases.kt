@@ -6,11 +6,8 @@ import com.dianascode.nooroweather.domain.mappers.toWeather
 import com.dianascode.nooroweather.domain.model.Weather
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-class WeatherUseCases @Inject constructor(
+class WeatherUseCases(
     private val weatherRepository: IWeatherRepository
 ) : IWeatherUseCases {
 

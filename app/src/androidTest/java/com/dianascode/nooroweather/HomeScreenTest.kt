@@ -10,7 +10,6 @@ import com.dianascode.nooroweather.ui.features.home.HomeScreen
 import com.dianascode.nooroweather.ui.features.home.HomeViewModel
 import com.dianascode.nooroweather.ui.features.home.HomeViewState
 import com.dianascode.nooroweather.ui.theme.NooroWeatherTheme
-import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.junit.Rule
 import org.junit.Test
@@ -18,7 +17,6 @@ import org.junit.runner.RunWith
 import org.mockito.Mockito.mock
 import org.mockito.kotlin.whenever
 
-@HiltAndroidTest
 @RunWith(AndroidJUnit4::class)
 class HomeScreenTest {
 
